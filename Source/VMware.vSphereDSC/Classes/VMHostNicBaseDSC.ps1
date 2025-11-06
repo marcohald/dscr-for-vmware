@@ -285,7 +285,7 @@ class VMHostNicBaseDSC : VMHostEntityBaseDSC {
         Both Dhcp and IPv6Enabled are applicable only for the Update operation, so they are not
         populated in the GetVMHostNetworkAdapterParams() which is used for Create and Update operations.
         #>
-        if ($null -ne $this.Dhcp) {
+        if ($null -ne $this.Dhcp -and $this.Dhcp) {
             $vmHostNetworkAdapterParams.Dhcp = $this.Dhcp
 
             <#
